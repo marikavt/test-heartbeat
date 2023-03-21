@@ -1,0 +1,112 @@
+/* === removing default button style ===*/
+.button {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* button styling */
+.button {
+    border-right: 6px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.6);
+    --animation-color: #be0b3b;
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px
+    var(--text-stroke-color);
+}
+
+/* this is the text, when you hover on button */
+.hover-text{
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right)
+    solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px
+    var(--animation-color);
+}
+
+/* hover */
+.button:hover .hover-text{
+    width: 100%;
+    filter: drop-shadow(0 0 23px
+    var(--animation-color));
+}
+
+/* heart */
+.heart {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    position: relative;
+    top: 150px;
+    left: 150px;
+    transform: rotate(-45deg);
+    animation-name: beat;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    background-color: pink;
+    border-radius: 50%;
+    height: 100px;
+    position: absolute;
+    width: 100px;
+    bottom: 50%;
+    animation-name: beat;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.heart::after{
+    top: 0;
+    left: 50%;
+}
+
+@keyframes beat {
+    0% {
+        width: 60px;
+        height: 60px;
+    }
+    40% {
+        width: 50px;
+        height: 50px;
+    }
+    50% {
+        width: 50px;
+        height: 50px;
+    }
+    60% {
+        width: 50px;
+        height: 50px;
+    }
+    70% {
+        width: 50px;
+        height: 50px;
+    }
+    80% {
+        width: 50px;
+        height: 50px;
+    }
+    100%{
+        width: 50px;
+        height: 50px;
+    }
+}
